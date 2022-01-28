@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 2px;
+}
+
+.try {
+  height: 20px;
+  border-radius: 20%;
+  align-self: center;
+
+}
+
+.Board {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.Line {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin: 5px;
+}
+
+.select-container {
+  width: 120px;
+  border: solid black 2px;
+  margin: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.solution {
+  display: none;
+}
+
+.result {
+  margin: 10px;
+  align-self: center;
+}
+
+.baudroieBall {
+  background-image: url(./assets/baudroie.jpeg);
+  background-size: cover;
+}
+
+.manteBall {
+  background-image: url(./assets/mante.jpeg);
+  background-size: cover;
+}
+
+.dragonBall {
+  background-image: url(./assets/dragon.jpeg);
+  background-size: cover;
+}
+
+.blobBall {
+  background-image: url(./assets/blobfish.jpeg);
+  background-size: cover;
+}
+
+.nullBall {
+  background-color: rgb(238, 228, 228)
+}
