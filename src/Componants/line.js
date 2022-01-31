@@ -13,7 +13,6 @@ function Line({ id, solution }) {
   function ballClick(id) {
     let line_tmp = [...line];
     line_tmp[id] = line_tmp[id] === 3 ? 0 : line_tmp[id] + 1;
-    console.log(line_tmp);
     setLine(line_tmp);
   }
 
@@ -21,9 +20,6 @@ function Line({ id, solution }) {
     send(true);
     var sol = [...solution];
     let answer = [...line];
-    console.log(answer);
-    console.log(sol);
-    // commencer par comparer answer et sol
     let colorOk = 0;
     let allOk = 0;
     if (answer === sol) {
@@ -36,14 +32,11 @@ function Line({ id, solution }) {
           answer[i] = "o"
         }
       }
-      console.log(answer);
-      console.log(sol);
       for (let i = 0; i < 4; i++) {
         if (answer.includes(sol[i])) {
           colorOk += 1;
         }
       }
-      console.log(allOk, colorOk);
       sendResult([allOk, colorOk]);
     }
   }
