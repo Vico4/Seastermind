@@ -1,3 +1,4 @@
+import '../App.css'
 
 function Ball({id, sent, color, action, type, num}) {
 const colors = ['baudroie', 'mante', 'dragon', 'blob']
