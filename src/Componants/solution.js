@@ -1,11 +1,17 @@
 import Ball from './ball'
+import {useState} from 'react'
 
-function Solution() {
-    // insérer générateur de code couleur
-
+function Solution({solution}) {
+    const colors = ['baudroie', 'mante', 'dragon', 'blob']
+    const [display, show] = useState(false)
+    
     return(
-        <div className='solution'>
-        </div>
+        <div>
+        <button className="showSol" onClick={()=>show(true)}>Show solution</button>
+        {display === true ? <div className='solution'>
+        {solution.map((x,i) => <Ball type="solution" num={colors[x]+"Ball"} key={i+"Sol"}/>)}
+         </div> : null}
+         </div>
     )
 }
 

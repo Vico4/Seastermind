@@ -5,15 +5,26 @@ import Solution from './solution';
 
 
 function Board() {
+    const solution = getCode()
     var lines = []
     for (let i=0; i<11; i++) {
-    lines.push(<Line id={i.toString()} key={i.toString()}/>)
+    lines.push(<Line id={i.toString()} key={i.toString()} solution={solution}/>)
     }
+
+    function getCode(){
+      let code = []
+      let num
+      for(let i = 0; i < 4; i++) {
+          num = Math.floor(Math.random() * 4)
+          code.push(num)
+      }
+      return code
+  }
 
     return (
       <div className="Board">
        {lines}
-       <Solution />
+       <Solution solution={solution}/>
       </div>
     );
   }

@@ -2,23 +2,18 @@ import '../App.css'
 import { useState } from 'react'
 
 // utiliser un state empty / selected / tried 
-function Ball() {
-    const colors = ['baudroie', 'mante', 'dragon', 'blob']
-    const [selectedBall, selectBall] = useState(0)
-    const color = colors[selectedBall]
-    
-// onclick -> selon le type, 
-
-    /* function selectBall(currColor){
-
-    } */
-
+function Ball({id, sent, color, action, type, num}) {
+const colors = ['baudroie', 'mante', 'dragon', 'blob']
+console.log(colors[color])
     return(
+        type ==="solution" ? 
+        <button className={num}></button>
+        :
         <button 
-        className={color+"Ball"}
-         /* id={props.key} */
-    onClick={()=> {selectBall(selectedBall === 3 ? 0 : selectedBall + 1)}}
-        >  </button>
+        className={colors[color]+"Ball"}
+        onClick={()=> {!sent ? action(id) 
+            : alert("you can't change this anymore")}}
+        > {id} </button>
     )
 }
 
