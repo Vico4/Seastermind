@@ -1,4 +1,3 @@
-import Solution from "./solution"
 
 function Result({result, line}) {
     // fonction pour calculer le résultat
