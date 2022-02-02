@@ -1,6 +1,12 @@
+@font-face {
+  font-family: "Ocean";
+  src: url("./assets/ocean/Ocean.ttf")
+ }
+
 body {
   display: flex;
   justify-content: center;
+  font-family: "Ocean";
 }
 
 .App {
@@ -10,6 +16,8 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 100px;
+  color: rgba(7, 64, 150, 0.988);
 }
 
 button {
