@@ -1,15 +1,19 @@
 import Ball from './ball'
 import {useState} from 'react'
 
-function Solution({solution}) {
-    const colors = ['baudroie', 'mante', 'dragon', 'blob']
+function Solution({solution, gameOver, endGame}) {
     const [display, show] = useState(false)
+
+    function solClick() {
+        show(true)
+        endGame(true)
+    }
     
     return(
         <div>
-        <button className="showSol" onClick={()=>show(true)}>Show solution</button>
+        <button className="showSol" onClick={()=>solClick(true)}>Show solution</button>
         {display === true ? <div className='solution'>
-        {solution.map((x,i) => <Ball type="solution" color={x} key={i+"Sol"}/>)}
+        {solution.map((x,i) => <Ball color={x} key={i+"Sol"}/>)}
          </div> : null}
          </div>
     )

@@ -1,14 +1,13 @@
+import { useState } from 'react';
 import Line from './line'
 import Solution from './solution';
 
-// créer les lines avec une boucle et gérer les keys 
-
-
 function Board() {
     const solution = getCode()
+    const [gameOver, endGame] = useState(false)
     var lines = []
     for (let i=0; i<11; i++) {
-    lines.push(<Line id={i.toString()} key={i.toString()} solution={solution}/>)
+    lines.push(<Line id={i.toString()} key={i.toString()} solution={solution} gameOver={gameOver} endGame={endGame}/>)
     }
 
     function getCode(){
@@ -24,7 +23,7 @@ function Board() {
     return (
       <div className="Board">
        {lines}
-       <Solution solution={solution}/>
+       <Solution solution={solution} gameOver={gameOver} endGame={endGame}/>
       </div>
     );
   }
