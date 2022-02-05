@@ -54,8 +54,7 @@ function Line({ id, solution }) {
       ))}
 
       <button className="try" onClick={tryAction}>
-        {" "}
-        Try{" "}
+        Try
       </button>
       <Result result={result} line={lineKey} />
     </div>
