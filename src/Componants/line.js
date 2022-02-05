@@ -21,7 +21,6 @@ function Line({ id, solution, endGame, gameOver}) {
   function tryAction() {
     send(true);
     const sol = [...solution];
-    console.log(sol)
     const answer = [...line];
     let colorOk = 0;
     let allOk = 0;

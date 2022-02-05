@@ -11,7 +11,6 @@ function App() {
         num = Math.floor(Math.random() * 4)
         code.push(num)
     }
-    console.log(code)
     return code
 }
 
