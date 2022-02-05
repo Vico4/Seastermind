@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Board from './board'
 
-
 function App() {
   const [solution, start] = useState()
 
@@ -23,8 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={()=>{startGame()}}> Start Game</button>
-      { !solution ? null : <Board solution={solution}/>}
+      { !solution ? <button onClick={()=>{startGame()}}> Start Game</button> : <Board solution={solution}/>}
     </div>
   );
 }
