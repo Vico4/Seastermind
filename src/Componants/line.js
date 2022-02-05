@@ -20,8 +20,9 @@ function Line({ id, solution, endGame, gameOver}) {
 
   function tryAction() {
     send(true);
-    var sol = [...solution];
-    let answer = [...line];
+    const sol = [...solution];
+    console.log(sol)
+    const answer = [...line];
     let colorOk = 0;
     let allOk = 0;
     if (answer === sol) {
@@ -34,12 +35,13 @@ function Line({ id, solution, endGame, gameOver}) {
           answer[i] = "o"
         }
       }
-      for (let i = 0; i < 4; i++) {
-        if (answer.includes(sol[i])) {
+      for (let j = 0; j < 4; j++) {
+        if (answer.includes(sol[j])) {
           colorOk += 1;
         }
       }
       sendResult([allOk, colorOk]);
+
       if (allOk == 4){
         endGame('win')
       }
