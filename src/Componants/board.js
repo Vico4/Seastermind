@@ -4,7 +4,7 @@ import Solution from './solution';
 
 function Board() {
     const solution = getCode()
-    const [gameOver, endGame] = useState(false)
+    const [gameOver, endGame] = useState('gameOn')
     var lines = []
     for (let i=0; i<11; i++) {
     lines.push(<Line id={i.toString()} key={i.toString()} solution={solution} gameOver={gameOver} endGame={endGame}/>)

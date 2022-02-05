@@ -11,7 +11,7 @@ function Line({ id, solution, endGame, gameOver}) {
   const [line, setLine] = useState([0, 0, 0, 0]);
 
   function ballClick(id) {
-    if (!gameOver) {
+    if (gameOver === 'gameOn') {
     let line_tmp = [...line];
     line_tmp[id] = line_tmp[id] === 3 ? 0 : line_tmp[id] + 1;
     setLine(line_tmp);
@@ -41,7 +41,10 @@ function Line({ id, solution, endGame, gameOver}) {
       }
       sendResult([allOk, colorOk]);
       if (allOk == 4){
-        endGame(true)
+        endGame('win')
+      }
+      else if (id == '10' && allOk != 4) {
+        endGame('lose')
       }
     }
   }
