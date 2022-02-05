@@ -25,7 +25,7 @@ function Line({ id, solution, endGame, gameOver}) {
     let colorOk = 0;
     let allOk = 0;
     if (answer === sol) {
-      sendResult([4, 0])
+      allOk = 4
     } else {
       for (let i = 0; i < 4; i++) {
         if (answer[i] === sol[i]) {
@@ -40,6 +40,9 @@ function Line({ id, solution, endGame, gameOver}) {
         }
       }
       sendResult([allOk, colorOk]);
+      if (allOk == 4){
+        endGame(true)
+      }
     }
   }
 
