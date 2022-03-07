@@ -37,6 +37,7 @@ function Line({ id, solution, endGame, gameOver}) {
       for (let j = 0; j < 4; j++) {
         if (answer.includes(sol[j])) {
           colorOk += 1;
+          answer[answer.indexOf(sol[j])] = "o"
         }
       }
       sendResult([allOk, colorOk]);
